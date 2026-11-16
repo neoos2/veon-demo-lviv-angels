@@ -1,0 +1,40 @@
+/* Hallmark · shape: stand (база/небо) · genre: modern-minimal · theme: custom · job: join · idea: "База тримає — флаєр летить: практичне на темно-синій базі, гордість клубу злітає над нею" · vibe: "спортивно, впевнено, тепло, чітко"
+ * paper: #FFFFFF · accent: #8EE3CF · display: Dela Gothic One · body: Overpass · hero: фото станту на всю ширину, під ним темно-синя база з H1, однією кнопкою й телефоном · nav: sticky темно-синя шапка з якорями й кнопкою · footer: продовження бази signup · surface: absolute white paper (fixed by the approved concept palette) · imagery: client photos · signature: шов база/небо — фото стоять на краю синьої бази
+ * axes: light/heavy-grotesque/mint-on-navy · posture: committed · contrast: pass · fold: pass · v2.0.0 */
+/* Hallmark · pre-emit critique: P4 H4 E4 S4 R4 V4 · weakest: S, шов реалізовано підписною смугою під фото, а не діагоналлю; решта розділів тримає ідею через чергування неба й бази */
+/* Hallmark · waive 7b · palette pure white #FFFFFF · paper and light text are fixed by the approved concept palette (veon-concept colors), so the white stays as designed */
+/* Line 1 of this file is the Hallmark stamp (docs/process/hallmark.md). Tokens come from design/concept.md (veon-concept). */
+:root {
+  --color-sky: #69BFEE;
+  --color-base: #0A0E4D;
+  --color-accent: #8EE3CF;
+  --color-paper: #FFFFFF;
+  --color-surface: #EEF8FE;
+  --color-muted: #4B5180;
+  --color-muted-on-base: #AEB6E3;
+  --color-line-on-base: #2A2F6E;
+  --color-accent-ink: var(--color-base);
+  --color-accent-hover: #A9EBDC;
+  --color-bg: var(--color-paper);
+  --color-text: var(--color-base);
+
+  --font-display: "Dela Gothic One", "Dela Fallback", "Arial Black", system-ui, sans-serif;
+  --font-body: "Overpass", "Overpass Fallback", system-ui, sans-serif;
+
+  --radius: 6px;
+  --ease-out: cubic-bezier(.2, .7, .2, 1);
+  --dur: 600ms;
+
+  --fs-h1: 32px; --fs-h2: 30px; --fs-h3: 24px; --fs-lead: 17px; --fs-text: 17px; --fs-small: 14px;
+  --sp-1: 8px; --sp-2: 16px; --sp-3: 24px; --sp-4: 40px; --sp-5: 64px; --sp-6: 80px;
+  --section-y: 80px;
+  --space: 20px;
+  --container: 1280px;
+  --header-h: 64px;
+}
+@media (min-width: 768px) {
+  :root { --fs-h1: 52px; --fs-h2: 40px; --fs-h3: 28px; --fs-lead: 19px; --space: 40px; --section-y: 112px; --header-h: 72px; }
+}
+@media (min-width: 1200px) {
+  :root { --fs-h1: clamp(44px, 7.2vh, 68px); --fs-h2: 56px; --fs-h3: 32px; --fs-lead: 20px; --fs-text: 18px; --fs-small: 15px; --space: 80px; --section-y: 144px; --sp-6: 96px; }
+}

@@ -1,0 +1,195 @@
+---
+import Base from "../layouts/Base.astro";
+import Section from "../components/Section.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Photo from "../components/Photo.astro";
+import FutureLink from "../components/FutureLink.astro";
+import "../styles/page.css";
+import hero from "../assets/img/hero-stunt.jpg";
+import program from "../assets/img/program-pom-krakow.jpg";
+import award from "../assets/img/results-award.jpg";
+import trip from "../assets/img/club-trip-paris.jpg";
+import blazhko from "../assets/img/coach-blazhko.jpg";
+import dumitro from "../assets/img/coach-dumitro.jpg";
+import maloshenko from "../assets/img/coach-maloshenko.jpg";
+import kurakina from "../assets/img/coach-kurakina.jpg";
+import delaCyr from "../assets/fonts/dela-cyr.woff2?url";
+import overpassCyr from "../assets/fonts/overpass-cyr.woff2?url";
+
+const note = "Розділ у розробці";
+const TEL = "tel:+380689991619";
+const IG = "https://www.instagram.com/lvivangels_cheerleading/";
+const IG_STORE = "https://www.instagram.com/lvivangels_store/";
+const title = "Черлідинг для дітей у Львові — клуб Lviv Angels";
+const description = "Клуб черлідингу Lviv Angels у Львові: набір дітей від 3 років і дорослих 18+, перше тренування безкоштовно. Багаторазові чемпіони України, призери ЧЄ";
+const ld = {
+  "@context": "https://schema.org",
+  "@type": "SportsClub",
+  name: "Lviv Angels",
+  description: "Клуб черлідингу у Львові",
+  telephone: "+380689991619",
+  email: "lviv.angels.ua@gmail.com",
+  address: { "@type": "PostalAddress", streetAddress: "вул. Івана Миколайчука, 18", addressLocality: "Львів", addressCountry: "UA" },
+  location: { "@type": "Place", name: "СЗШ №97", address: { "@type": "PostalAddress", streetAddress: "вул. Івана Миколайчука, 18", addressLocality: "Львів", addressCountry: "UA" } },
+  sameAs: [IG],
+};
+const coaches = [
+  { name: "Наталя Блажко-Нікуліна", role: "Керівниця клубу, тренерка", img: blazhko, alt: "Наталя Блажко-Нікуліна в клубній блакитній куртці", lead: true },
+  { name: "Лідія Думітро", role: "Тренерка-постановниця", img: dumitro, alt: "Лідія Думітро в клубній блакитній куртці" },
+  { name: "Анастасія Малошенко", role: "Тренерка-постановниця, чемпіонка Європи в парі", img: maloshenko, alt: "Анастасія Малошенко в клубній блакитній куртці" },
+  { name: "Юліана Куракіна", role: "Тренерка-постановниця", img: kurakina, alt: "Юліана Куракіна в клубній блакитній куртці" },
+];
+const halls = ["школа «EcoLand» (Скрипника)", "школа «EcoLand» (Плугова)", "Ліцей ім. І. Пулюя", "СЗШ №43", "СЗШ №44", "СЗШ №93", "СЗШ №97", "Ліцей №66", "СК «Динамо»"];
+---
+<Base lang="uk" title={title} description={description}>
+  <Fragment slot="head">
+    <link rel="preload" as="font" type="font/woff2" href={delaCyr} crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href={overpassCyr} crossorigin />
+    <meta name="theme-color" content="#0A0E4D" />
+    <script type="application/ld+json" data-rec="S-R006" set:html={JSON.stringify(ld)} />
+  </Fragment>
+  <Header slot="header" />
+
+  <Fragment>
+    <!-- 1. HERO -->
+    <Section id="hero" rec="R-001" class="hero" label="Lviv Angels">
+      <div class="hero__photo">
+        <Photo src={hero} alt="Флаєр у шпагаті над руками бази: виступ команди Lviv Angels на змаганнях" widths={[390, 768, 1200, 1500]} sizes="100vw" priority rec="R-009" class="hero__img" />
+      </div>
+      <div class="hero__base on-base">
+        <div class="container hero__grid">
+          <h1 data-rec="R-014,S-R003,G-R001,MA-R002">Черлідинг для дітей і дорослих у Львові — клуб Lviv Angels</h1>
+          <div class="hero__side">
+            <p class="lead">Набір дітей від 3 років і дорослих 18+: танець, гімнастика, акробатика. Перше тренування — безкоштовне.</p>
+            <a class="btn btn--accent btn--block" href="#signup">Записатися на пробне</a>
+            <a class="hero__tel" href={TEL}>+38 (068) 999-16-19</a>
+          </div>
+        </div>
+      </div>
+    </Section>
+
+    <!-- 2. PROGRAM -->
+    <Section id="program" rec="R-006" class="program">
+      <div class="container program__grid">
+        <div class="program__text">
+          <h2>Що таке черлідинг у Lviv Angels</h2>
+          <ul class="program__list" aria-label="З чого складається черлідинг">
+            <li>Танець</li><li>Гімнастика</li><li>Акробатика</li><li>Станти</li>
+          </ul>
+          <h3 class="program__who-h">Хто може прийти</h3>
+          <p class="program__who">Діти від 3 років і дорослі 18+. Перше тренування безкоштовне; групу й вік підкажемо під час запису.</p>
+        </div>
+        <figure class="seam" data-lift="clip" data-rec="R-008,G-R002">
+          <div class="seam__photo">
+            <Photo src={program} alt="Помпон-номер команди Lviv Angels на змаганнях у Кракові" widths={[390, 768, 1024]} sizes="(min-width: 1200px) 640px, (min-width: 768px) 50vw, 100vw" />
+          </div>
+          <figcaption class="seam__base on-base">
+            <strong>Перше тренування — безкоштовно</strong>
+            <a class="link-accent" href={IG} rel="noopener" target="_blank">Матеріали для новачків — в Instagram</a>
+          </figcaption>
+        </figure>
+      </div>
+    </Section>
+
+    <!-- 3. RESULTS -->
+    <Section id="results" rec="R-005" class="results">
+      <div class="container">
+        <h2>Результати</h2>
+        <div class="results__top">
+          <div class="results__big">
+            <p class="results__num"><span>11 з 12</span></p>
+            <p class="results__num-text">учасниць юнацької збірної України на ЧЄ-2024 — з Lviv Angels</p>
+            <ul class="results__facts">
+              <li>Багаторазові чемпіони України</li>
+              <li>Посвідчення майстрів спорту України 2026 отримали спортсменки клубу</li>
+            </ul>
+            <FutureLink note={note} class="future-link--on-sky">Усі досягнення</FutureLink>
+          </div>
+          <figure class="results__award" data-lift="clip">
+            <Photo src={award} alt="Відзнака спортивному клубу Lviv Angels від обласної федерації" widths={[390, 683]} sizes="(min-width: 1200px) 300px, (min-width: 768px) 30vw, 70vw" />
+          </figure>
+        </div>
+        <ol class="podium" data-lift="podium" aria-label="П'єдестал: головні результати клубу">
+          <li class="step step--1"><span class="step__bg"></span><div class="step__body"><span class="step__n">1</span><h3>Чемпіонка Європи в парі</h3><p>Анастасія Малошенко, ЧЄ-2024</p></div></li>
+          <li class="step step--2"><span class="step__bg"></span><div class="step__body"><span class="step__n">2</span><h3>Срібло ЧЄ-2018</h3><p>Гельсінкі</p></div></li>
+          <li class="step step--3"><span class="step__bg"></span><div class="step__body"><span class="step__n">3</span><h3>Бронза ЧЄ-2017</h3><p>Прага</p></div></li>
+        </ol>
+      </div>
+    </Section>
+
+    <!-- 4. COACHES -->
+    <Section id="coaches" rec="R-005" class="coaches on-base">
+      <div class="container">
+        <h2>Хто тримає і страхує</h2>
+        <ul class="coaches__list">
+          {coaches.map((c) => (
+            <li class:list={["coach", c.lead && "coach--lead"]}>
+              <Photo src={c.img} alt={c.alt} widths={c.lead ? [390, 640, 1000] : [390, 640]} sizes={c.lead ? "(min-width: 1200px) 420px, (min-width: 768px) 38vw, 100vw" : "(min-width: 1200px) 290px, (min-width: 768px) 28vw, 50vw"} class="coach__img" eager />
+              <h3>{c.name}</h3>
+              <p>{c.role}</p>
+            </li>
+          ))}
+        </ul>
+        <FutureLink note={note} class="future-link--on-base">Усі тренери</FutureLink>
+      </div>
+    </Section>
+
+    <!-- 5. CLUB LIFE -->
+    <Section id="club-life" class="club">
+      <div class="container club__grid">
+        <figure class="seam" data-lift="clip">
+          <div class="seam__photo">
+            <Photo src={trip} alt="Вихованки Lviv Angels у футболках «Cheer Family» під час виїзду" widths={[390, 768, 1024]} sizes="(min-width: 1200px) 640px, (min-width: 768px) 50vw, 100vw" />
+          </div>
+          <figcaption class="seam__base on-base"><strong>Виїзди й табори</strong></figcaption>
+        </figure>
+        <div class="club__text">
+          <h2>Життя клубу</h2>
+          <ul class="events">
+            <li><h3>Cheerleading Super Cup</h3><p>Змагання у Львові, які організовує клуб: майже 1500 спортсменок.</p></li>
+            <li><h3>«Весна янголів»</h3><p>Змагання, які клуб організовує сам.</p></li>
+            <li><h3>Табори й виїзди</h3><p>Summer Camp Bulgaria, 16–25 червня; весняний вікенд з ночівлею.</p></li>
+            <li><h3>Клубна форма</h3><p>Замовлення в Instagram <a href={IG_STORE} rel="noopener" target="_blank">@lvivangels_store</a>.</p></li>
+            <li><h3>Допомога</h3><p>На Чемпіонаті Львівської області зібрали 268 600 грн на лікування чотирирічного Марка.</p></li>
+          </ul>
+          <p class="club__links">
+            <FutureLink note={note} class="future-link--on-light">Змагання і табори</FutureLink>
+            <FutureLink note={note} class="future-link--on-light">Новини</FutureLink>
+          </p>
+        </div>
+      </div>
+    </Section>
+
+    <!-- 6. SIGNUP -->
+    <Section id="signup" class="signup on-base">
+      <div class="container signup__grid">
+        <div class="signup__main">
+          <h2>Перше тренування — безкоштовно</h2>
+          <a class="signup__tel" href={TEL}>+38 (068) 999-16-19</a>
+          <div class="signup__actions">
+            <a class="btn btn--accent" href={TEL}>Подзвонити</a>
+            <a class="btn btn--outline" href={IG} rel="noopener" target="_blank">Написати в Instagram</a>
+          </div>
+          <p class="signup__mail"><a href="mailto:lviv.angels.ua@gmail.com">lviv.angels.ua@gmail.com</a></p>
+        </div>
+        <div class="signup__info">
+          <h3>Де</h3>
+          <p>СЗШ №97, вул. Івана Миколайчука, 18, Львів.</p>
+          <p class="muted">Клуб тренує в 9 залах Львова: {halls.join(", ")}. Найближчий до вас підкажемо під час запису.</p>
+          <h3>Вартість і розклад</h3>
+          <p>Розкажемо під час запису.</p>
+          <FutureLink note={note} class="future-link--on-base">Усі локації та розклад</FutureLink>
+        </div>
+      </div>
+    </Section>
+  </Fragment>
+
+  <Fragment slot="footer">
+    <Footer />
+    <div class="actionbar on-base" data-actionbar>
+      <a class="btn btn--accent" href={TEL}>Подзвонити</a>
+      <a class="btn btn--outline" href={IG} rel="noopener" target="_blank">Instagram</a>
+    </div>
+  </Fragment>
+</Base>

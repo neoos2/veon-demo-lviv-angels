@@ -1,0 +1,20 @@
+---
+// Client photo: AVIF + WebP with srcset, width/height from the source, lazy unless `priority`.
+import { Picture } from "astro:assets";
+interface Props { src: ImageMetadata; alt: string; widths: number[]; sizes: string; priority?: boolean; eager?: boolean; class?: string; rec?: string; }
+const { src, alt, widths, sizes, priority = false, eager = false, class: cls, rec } = Astro.props;
+---
+<Picture
+  src={src}
+  alt={alt}
+  widths={widths}
+  sizes={sizes}
+  formats={["avif", "webp"]}
+  fallbackFormat="jpg"
+  quality={72}
+  class={cls}
+  loading={priority || eager ? "eager" : "lazy"}
+  decoding={priority ? "sync" : "async"}
+  fetchpriority={priority ? "high" : undefined}
+  data-rec={rec}
+/>

@@ -1,0 +1,26 @@
+---
+import { Image } from "astro:assets";
+import logo from "../assets/img/logo-wordmark.webp";
+const links = [
+  ["Програма", "#program"], ["Результати", "#results"], ["Тренери", "#coaches"], ["Життя клубу", "#club-life"], ["Контакти", "#signup"],
+];
+---
+<header class="site-header on-base" data-rec="R-003">
+  <div class="site-header__bar container">
+    <a class="site-header__logo" href="#hero" aria-label="Lviv Angels — на початок сторінки">
+      <Image src={logo} alt="Lviv Angels" width={116} height={37} loading="eager" densities={[1, 2]} />
+    </a>
+    <nav id="site-nav" class="site-nav" aria-label="Основне меню">
+      <ul>
+        {links.map(([t, h]) => <li><a href={h}>{t}</a></li>)}
+      </ul>
+      <a class="btn btn--accent site-nav__cta" href="#signup">Записатися на пробне</a>
+    </nav>
+    <a class="site-header__tel" href="tel:+380689991619" aria-label="Подзвонити: +38 (068) 999-16-19">
+      <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+    </a>
+    <button class="site-header__burger" type="button" data-burger aria-expanded="false" aria-controls="site-nav" aria-label="Відкрити меню">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>

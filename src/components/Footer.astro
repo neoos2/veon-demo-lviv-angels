@@ -1,0 +1,31 @@
+---
+import { Image } from "astro:assets";
+import logo from "../assets/img/logo-wordmark.webp";
+import FutureLink from "./FutureLink.astro";
+const note = "Розділ у розробці";
+const pages = ["Набір і розклад", "Локації", "Тренери", "Про клуб", "Змагання і табори", "Новини", "Галерея", "Правила клубу", "Політика конфіденційності"];
+---
+<footer class="site-footer on-base">
+  <div class="container site-footer__grid">
+    <div class="site-footer__brand">
+      <a href="#hero" aria-label="Lviv Angels — на початок сторінки"><Image src={logo} alt="Lviv Angels" width={140} height={45} loading="lazy" densities={[1, 2]} /></a>
+      <p>Клуб черлідингу у Львові</p>
+    </div>
+    <div class="site-footer__col">
+      <h2 class="site-footer__h">Зв'язок</h2>
+      <ul>
+        <li><a href="tel:+380689991619">+38 (068) 999-16-19</a></li>
+        <li><a href="mailto:lviv.angels.ua@gmail.com">lviv.angels.ua@gmail.com</a></li>
+        <li><a href="https://www.instagram.com/lvivangels_cheerleading/" rel="noopener" target="_blank">Instagram клубу</a></li>
+        <li><a href="https://www.instagram.com/lvivangels_store/" rel="noopener" target="_blank">Instagram магазину форми</a></li>
+      </ul>
+    </div>
+    <div class="site-footer__col site-footer__col--pages">
+      <h2 class="site-footer__h">Сторінки</h2>
+      <ul class="site-footer__pages">
+        {pages.map((p) => <li><FutureLink note={note}>{p}</FutureLink></li>)}
+      </ul>
+    </div>
+  </div>
+  <div class="container site-footer__legal"><p>© Lviv Angels, Львів</p></div>
+</footer>
